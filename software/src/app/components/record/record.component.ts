@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {RecordDto} from "../../dto/record.dto";
 import {CurrencyService} from "../../service/currency.service";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-record',
@@ -13,13 +14,19 @@ export class RecordComponent {
   total:number=0
   constructor(private service:CurrencyService) {
   }
+  dataSource:any;
   ngOnInit(){
     this.service.recordCurrency().subscribe({
       next:data=>{
         this.recordDto=data.content
+        this.dataSource = new MatTableDataSource(this.recordDto);
         this.total=data.totalpages
       }
     })
+  }
+  filtrar(event: Event) {
+    const filtro = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filtro.trim().toLowerCase();
   }
   increment(){
     if(this.pages<this.total){

@@ -42,7 +42,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #9A1663;
     color: white;
     font-weight: 600;
   }
@@ -135,7 +135,7 @@
   }
 
   .card.highlight-card {
-    background-color: #1976d2;
+    background-color: #FF97C1;
     color: white;
     font-weight: 600;
     border: none;
@@ -363,7 +363,7 @@
       <mat-label>Monto</mat-label>
       <input matInput placeholder="Ex. 1000" formControlName="amount">
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="submit">Submit</button>
+    <button mat-raised-button style="background-color: #FF5858; color: white; border-radius: 10px; margin-left: 200px" (click)="submit">Submit</button>
   </form>
   <span *ngIf="responseCurrencyDto != undefined">Resultado: {{responseCurrencyDto.result}} Fecha: {{responseCurrencyDto.date}}</span>
 <app-record></app-record>

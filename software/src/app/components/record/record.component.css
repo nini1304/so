@@ -1,5 +1,9 @@
 .demo-table {
   width: 100%;
+  margin-top: 20px;
+}
+.search{
+  margin-top: 40px;
 }
 
 .mat-mdc-row .mat-mdc-cell {

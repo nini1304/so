@@ -4,6 +4,7 @@
 }
 .search{
   margin-top: 40px;
+  margin-left: 20px;
 }
 
 .mat-mdc-row .mat-mdc-cell {
@@ -19,3 +20,8 @@
 .demo-row-is-clicked {
   font-weight: bold;
 }
+.boton{
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+

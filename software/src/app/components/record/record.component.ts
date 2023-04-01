@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {RecordDto} from "../../dto/record.dto";
 import {CurrencyService} from "../../service/currency.service";
 import {MatTableDataSource} from "@angular/material/table";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-record',
@@ -12,7 +13,7 @@ export class RecordComponent {
   recordDto:RecordDto[]
   pages:number=0
   total:number=0
-  constructor(private service:CurrencyService) {
+  constructor(private service:CurrencyService, private keycloakService: KeycloakService) {
   }
   dataSource:any;
   ngOnInit(){
@@ -49,6 +50,9 @@ export class RecordComponent {
         }
       })
     }
+  }
+  logout() {
+    this.keycloakService.logout("http://localhost:4200");
   }
 
   displayedColumns: string[] = ['ID', 'FROM', 'TO', 'AMOUNT', 'DATE', 'RESULT'];

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,12 +10,18 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { RecordComponent } from './components/record/record.component';
 import {MatTableModule} from "@angular/material/table";
+import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
+import {initializeKeycloak} from "./init/keycloak";
+import { CurrencyComponent } from './components/currency/currency.component';
+import { ErrorComponent } from './components/error/error.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RecordComponent,
+    CurrencyComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,9 +31,17 @@ import {MatTableModule} from "@angular/material/table";
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    KeycloakAngularModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -195,10 +195,10 @@
       <input matInput placeholder="Ex. 1000" formControlName="amount">
     </mat-form-field>
     <button mat-raised-button style="background-color: #FF5858; color: white; border-radius: 10px; margin-left: 200px" (click)="submit">Submit</button>
-    <button class="boton" mat-raised-button style="background-color: #FF5858; margin-top: 40px; color: white; border-radius: 10px; margin-left: 200px" (click)="logout()">LOGOUT</button>
 
   </form>
 
   <span *ngIf="responseCurrencyDto != undefined">Resultado: {{responseCurrencyDto.result}} Fecha: {{responseCurrencyDto.date}}</span>
+  <button class="boton" mat-raised-button style="background-color: #FF5858; margin-top: 40px; color: white; border-radius: 10px;" (click)="logout()">LOGOUT</button>
 
 </div>

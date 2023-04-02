@@ -4,7 +4,7 @@ export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://localhost:8081',
+        url: 'http://192.168.1.211:8081',
         realm: 'software',
         clientId: 'frontend'
       },

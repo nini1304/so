@@ -18,7 +18,7 @@ export class CurrencyComponent {
 
 
 
-  constructor(private formBuilder: FormBuilder, private currencyService: CurrencyService,private keycloakService: KeycloakService) {
+  constructor(private formBuilder: FormBuilder, private currencyService: CurrencyService) {
     this.currencyForm = this.formBuilder.group({
       from: '',
       to: '',
@@ -26,9 +26,7 @@ export class CurrencyComponent {
 
     })
   }
-  logout() {
-    this.keycloakService.logout("http://localhost:4200");
-  }
+
 
   submit() {
     console.log(this.currencyForm.value);

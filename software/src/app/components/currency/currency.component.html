@@ -1,4 +1,8 @@
 <style>
+  body{
+    margin: 0;
+    padding-top: 80px;
+  }
   .content {
     display: flex;
     margin: 82px auto 32px;
@@ -6,6 +10,7 @@
     max-width: 960px;
     flex-direction: column;
     align-items: center;
+
   }
 
   svg.material-icons {
@@ -156,6 +161,8 @@
     background-color: rgb(15, 15, 16);
   }
 </style>
+
+<body>
 <div class="content" role="main">
 
   <!-- Highlight Card -->
@@ -199,6 +206,7 @@
   </form>
 
   <span *ngIf="responseCurrencyDto != undefined">Resultado: {{responseCurrencyDto.result}} Fecha: {{responseCurrencyDto.date}}</span>
-  <button class="boton" mat-raised-button style="background-color: #FF5858; margin-top: 40px; color: white; border-radius: 10px;" (click)="logout()">LOGOUT</button>
+
 
 </div>
+</body>

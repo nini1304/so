@@ -15,6 +15,7 @@ import {initializeKeycloak} from "./init/keycloak";
 import { CurrencyComponent } from './components/currency/currency.component';
 import { ErrorComponent } from './components/error/error.component';
 import { MatIconModule } from '@angular/material/icon';
+import { StartComponent } from './components/start/start.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     RecordComponent,
     CurrencyComponent,
     ErrorComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,

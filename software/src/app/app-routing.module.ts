@@ -5,12 +5,14 @@ import {CurrencyComponent} from "./components/currency/currency.component";
 import {ErrorComponent} from "./components/error/error.component";
 import {RecordComponent} from "./components/record/record.component";
 import {AuthGuard} from "./guard/auth.guard";
+import {StartComponent} from "./components/start/start.component";
 
 const routes: Routes = [
   //cuando no se pone una ruta se redirige a la ruta por defecto
-  { path: '', component: CurrencyComponent, data: {roles: ['USER']}, canActivate: [AuthGuard]},
+  { path: '', component: StartComponent},
+  { path: 'convertion', component: CurrencyComponent, data: {roles: ['USER']}, canActivate: [AuthGuard]},
   { path: 'error', component: ErrorComponent},
-  { path: 'lista', component: RecordComponent, data: {roles: ['ADMIN']}, canActivate: [AuthGuard]},
+  { path: 'list', component: RecordComponent, data: {roles: ['ADMIN']}, canActivate: [AuthGuard]},
 
 ];
 

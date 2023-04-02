@@ -16,7 +16,7 @@ export class CurrencyService {
   public convertCurrency(from: string, to: string, amount: number): Observable<ResponseCurrencyDto> {
     return this.http.get<ResponseCurrencyDto>(`${this.BACK_URL}/api/v1/diviapi/convertion?from=${from}&to=${to}&amount=${amount}`);
   }
-  public recordCurrency(): Observable<any> {
-    return this.http.get<any>(`${this.BACK_URL}/api/v1/diviapi/list?page=0&size=10`);
+  public recordCurrency(pages:number): Observable<any> {
+    return this.http.get<any>(`${this.BACK_URL}/api/v1/diviapi/list?page=`+pages+`&size=10`);
   }
 }

@@ -16,6 +16,7 @@ import { CurrencyComponent } from './components/currency/currency.component';
 import { ErrorComponent } from './components/error/error.component';
 import { MatIconModule } from '@angular/material/icon';
 import { StartComponent } from './components/start/start.component';
+import { LocationComponent } from './components/location/location.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { StartComponent } from './components/start/start.component';
     CurrencyComponent,
     ErrorComponent,
     StartComponent,
+    LocationComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import {RecordDto} from "../../dto/record.dto";
 import {CurrencyService} from "../../service/currency.service";
 
 
+
 @Component({
   selector: 'app-record',
   templateUrl: './record.component.html',
